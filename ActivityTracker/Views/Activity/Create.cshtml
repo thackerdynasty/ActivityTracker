@@ -1,0 +1,16 @@
+@model ATActivity
+
+@{
+    ViewBag.Title = "Create Activity";
+    Layout = "_Layout";
+}
+
+<h1>Add an Activity</h1>
+
+<form method="post">
+    <input asp-for="Name" placeholder="Name" class="form-control" />
+    <br/>
+    <input asp-for="Description" placeholder="Description" class="form-control" />
+    <br/>
+    <input type="submit" value="Add" class="btn btn-primary" />
+</form>

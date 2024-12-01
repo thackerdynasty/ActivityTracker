@@ -1,3 +1,4 @@
+@using System.Globalization
 @model List<ATActivity>
 
 @{
@@ -11,7 +12,7 @@
 {
     <div>
         <h3>@activity.Name</h3>
-        <h4>@activity.Date</h4>
+        <h4>@activity.Date.ToString("MM/dd/yyyy 'at' h:mm tt")</h4>
         <p>@activity.Description</p>
     </div>
 }
