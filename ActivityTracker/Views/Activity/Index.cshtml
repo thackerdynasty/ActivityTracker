@@ -13,6 +13,10 @@
     <div>
         <h3>@activity.Name</h3>
         <h4>@activity.Date.ToString("MM/dd/yyyy 'at' h:mm tt")</h4>
-        <p>@activity.Description</p>
+        @activity.Description
+        <br/>
+        <a asp-action="Edit" asp-route-id="@activity.Id" class="btn btn-light">Edit</a> |
+        <a asp-action="Delete" asp-route-id="@activity.Id" class="btn btn-danger">Delete</a>
     </div>
+    <br/>
 }

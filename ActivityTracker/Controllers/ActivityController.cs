@@ -27,8 +27,32 @@ public class ActivityController : Controller
     public IActionResult Create(ATActivity activity)
     {
         if (!ModelState.IsValid) return View(activity);
-        activity.Date = DateTime.Now;
         _context.Activities.Add(activity);
+        _context.SaveChanges();
+        return RedirectToAction("Index");
+    }
+    
+    public IActionResult Delete(int id)
+    {
+        var activity = _context.Activities.Find(id);
+        if (activity == null) return NotFound();
+        _context.Activities.Remove(activity);
+        _context.SaveChanges();
+        return RedirectToAction("Index");
+    }
+    
+    public IActionResult Edit(int id)
+    {
+        var activity = _context.Activities.Find(id);
+        if (activity == null) return NotFound();
+        return View(activity);
+    }
+    
+    [HttpPost]
+    public IActionResult Edit(ATActivity activity)
+    {
+        if (!ModelState.IsValid) return View(activity);
+        _context.Activities.Update(activity);
         _context.SaveChanges();
         return RedirectToAction("Index");
     }

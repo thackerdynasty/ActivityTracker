@@ -1,0 +1,19 @@
+@model ATActivity
+
+@{
+    ViewBag.Title = "Edit Activity";
+    Layout = "_Layout";
+}
+
+<h1>Edit Activity</h1>
+
+<form method="post">
+    <input asp-for="Name" placeholder="Name" class="form-control" value="@Model.Name" />
+    <br/>
+    <input asp-for="Description" placeholder="Description" class="form-control" value="@Model.Description" />
+    <br/>
+    <input asp-for="Date" placeholder="Date" class="form-control" type="datetime-local" />
+    <br/>
+    <input type="submit" value="Save" class="btn btn-primary" />
+    <a asp-action="Index" class="btn btn-danger">Cancel</a>
+</form>
