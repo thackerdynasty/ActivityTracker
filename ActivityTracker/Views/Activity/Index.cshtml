@@ -1,0 +1,17 @@
+@model List<ATActivity>
+
+@{
+    ViewBag.Title = "Activities";
+    Layout = "_Layout";
+}
+
+<h1>Activities</h1>
+
+@foreach (var activity in Model)
+{
+    <div>
+        <h3>@activity.Name</h3>
+        <h4>@activity.Date</h4>
+        <p>@activity.Description</p>
+    </div>
+}
